@@ -53,6 +53,14 @@ Voice foreman's `tools/install-services.sh` puts `vf-ctl` in `~/.local/bin`, whe
 | Right click | Read the state again |
 | `omarchy-shell io.github.yassinesawahi.voice <fn>` | `toggle`, `toggleCalls`, `togglePower`, `callMe`, `toggleDesk`, `refresh`, `close` |
 
+## Remove
+
+```bash
+omarchy plugin remove io.github.yassinesawahi.voice
+```
+
+Voice foreman itself is removed separately: see [its README](https://github.com/YassineSawahi/voice-foreman#remove).
+
 ## License
 
 MIT
