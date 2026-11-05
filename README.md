@@ -19,7 +19,7 @@ An [Omarchy](https://omarchy.org) bar widget for **[voice foreman](https://githu
 omarchy plugin add https://github.com/YassineSawahi/omarchy-voice.git --enable
 ```
 
-Put voice foreman's `bin/` on your `PATH`, or set the full path to `bin/vf-ctl` in the widget's settings.
+Voice foreman's `tools/install-services.sh` puts `vf-ctl` in `~/.local/bin`, where the widget finds it by itself. If yours lives elsewhere, set the full path to `vf-ctl` in the widget's settings.
 
 ## The `vf-ctl` contract
 
