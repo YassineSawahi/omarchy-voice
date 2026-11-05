@@ -1,8 +1,8 @@
 # Omarchy Voice
 
-An [Omarchy](https://omarchy.org) bar widget for a **voice foreman**: an assistant you can phone over SIP, and that phones you when a Claude Code session finishes or needs you. The widget reads and flips its switches. All the logic lives behind a small control command, `vf-ctl`.
+An [Omarchy](https://omarchy.org) bar widget for **[voice foreman](https://github.com/YassineSawahi/voice-foreman)**: Claude on a real phone call over Tailscale. It phones you when a Claude Code session finishes or needs you, and you can call it. The widget reads and flips its switches through voice foreman's control command, `vf-ctl`.
 
-> **Heads-up:** this is only the bar side. On its own it shows "Reading…" until a `vf-ctl` that speaks the contract below is installed.
+> **Heads-up:** this is only the bar side. Set up [voice foreman](https://github.com/YassineSawahi/voice-foreman) first; until then the widget shows "Reading…".
 
 ## What it shows
 
@@ -19,7 +19,7 @@ An [Omarchy](https://omarchy.org) bar widget for a **voice foreman**: an assista
 omarchy plugin add https://github.com/YassineSawahi/omarchy-voice.git --enable
 ```
 
-Put `vf-ctl` on your `PATH`, or set its path in the widget's settings.
+Put voice foreman's `bin/` on your `PATH`, or set the full path to `bin/vf-ctl` in the widget's settings.
 
 ## The `vf-ctl` contract
 
