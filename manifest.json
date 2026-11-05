@@ -1,0 +1,32 @@
+{
+  "schemaVersion": 1,
+  "id": "io.github.yassinesawahi.voice",
+  "name": "Omarchy Voice",
+  "version": "1.0.0",
+  "author": "Yassine Sawahi",
+  "homepage": "https://github.com/YassineSawahi/omarchy-voice",
+  "license": "MIT",
+  "description": "Omarchy on the phone: switch the voice foreman on and off, choose whether it calls you, and place a test call",
+  "kinds": [
+    "bar-widget"
+  ],
+  "entryPoints": {
+    "barWidget": "BarWidget.qml"
+  },
+  "barWidget": {
+    "displayName": "Omarchy Voice",
+    "description": "Phone icon for the voice foreman; lights up during a call. Middle-click turns calls to your phone on or off.",
+    "category": "Network",
+    "allowMultiple": false,
+    "defaultSection": "right",
+    "schema": [
+      {
+        "key": "ctlPath",
+        "type": "string",
+        "label": "vf-ctl command",
+        "description": "Path to the voice foreman's vf-ctl. Empty finds vf-ctl on PATH.",
+        "defaultValue": ""
+      }
+    ]
+  }
+}
