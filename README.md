@@ -15,6 +15,29 @@ An [Omarchy](https://omarchy.org) bar widget for **[voice foreman](https://githu
   - **Call my phone:** on/off, and **Always** vs **Only when I'm away**.
   - Whether your phone is answering, and a **Call me now** button.
 
+## How it works
+
+This widget is only a front end. It never touches the network, your phone or Tailscale. It runs voice foreman's `vf-ctl` and draws the JSON that comes back: every 10 s, and every 3 s while the panel is open or a call is ringing or live. Each button runs `vf-ctl` with an action, which prints the new state straight away.
+
+`vf-ctl` works with voice foreman's own files and services on this PC:
+
+- **Calls on/off** and **Always / Only when I'm away** go into `~/.config/voice-foreman/settings.json`, which voice foreman checks before it calls you.
+- **Power** starts or stops voice foreman's user services (the speech service, the line and foremand) with `systemctl --user`. Off frees the GPU.
+- **Call me now** and **Talk at the PC** drop a note into voice foreman's spool folder, the same way a Claude Code session does when it finishes.
+- **What's happening** (in a call, ringing, the next call) comes from a status file voice foreman rewrites every second. One older than 10 s counts as unknown.
+- **Whether your phone answers** comes from the silent check voice foreman runs every 3 minutes.
+
+The call itself never passes through the widget. Voice foreman rings your phone from its own SIP line on this PC, across your tailnet; [its README](https://github.com/YassineSawahi/voice-foreman#how-it-works) explains that part.
+
+```text
+ bar widget --runs--> vf-ctl --+--> settings.json -----+
+      ^                        +--> spool folder ------+--> voice foreman
+      |                        +--> systemctl --user   |         |
+      +------- JSON -----------+<-- status.json <------+         |
+                                                                 v
+                         your phone <== SIP over Tailscale == its SIP line
+```
+
 ## Install
 
 ```bash
