@@ -3,6 +3,8 @@
 An [Omarchy](https://omarchy.org) bar widget for **[voice foreman](https://github.com/YassineSawahi/voice-foreman)**: Claude on a real phone call over Tailscale. It phones you when a Claude Code session finishes or needs you, and you can call it. The widget reads and flips its switches through voice foreman's control command, `vf-ctl`.
 
 > **Heads-up:** this is only the bar side. Set up [voice foreman](https://github.com/YassineSawahi/voice-foreman) first; until then the widget shows "Reading…".
+>
+> Use voice foreman from commit [`8644f39`](https://github.com/YassineSawahi/voice-foreman/commit/8644f39ecce0e151dc4bf8a17a8e86eb79b1977d) or later. Before it, every switch flipped from the bar rewrote `~/.config/voice-foreman/settings.json` readable by other users, keypad PIN included. Already installed? `git pull` in your voice foreman clone; the file is locked down the next time a switch is flipped.
 
 ## What it shows
 
