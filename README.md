@@ -4,7 +4,7 @@ An [Omarchy](https://omarchy.org) bar widget for **[voice foreman](https://githu
 
 > **Heads-up:** this is only the bar side. Set up [voice foreman](https://github.com/YassineSawahi/voice-foreman) first; until then the widget shows "Reading…".
 >
-> Use voice foreman from commit [`8644f39`](https://github.com/YassineSawahi/voice-foreman/commit/8644f39ecce0e151dc4bf8a17a8e86eb79b1977d) or later. Before it, every switch flipped from the bar rewrote `~/.config/voice-foreman/settings.json` readable by other users, keypad PIN included. Already installed? `git pull` in your voice foreman clone; the file is locked down the next time a switch is flipped.
+> Use voice foreman from commit [`0e3b2b9`](https://github.com/YassineSawahi/voice-foreman/commit/0e3b2b9) or later. Older versions control the line through ports on `127.0.0.1` that any account on the PC can use, and leave its settings (keypad PIN included), logs and transcripts readable by other accounts. Already installed? `git pull` in your voice foreman clone, `.venv/bin/pip install jeepney`, then run `tools/install-services.sh` again.
 
 ## What it shows
 
